@@ -1,0 +1,52 @@
+<!-- AI Prompt: Professional interior photography, screen blind in an penthouse office overviewing Valencia rooftops. Transparent weave letting light through. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-grad-4476" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F3D5E" />
+      <stop offset="100%" stop-color="#2A7DB8" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg-grad-4476)" />
+  <rect width="1200" height="675" fill="url(#grid)" />
+
+  <!-- Soft architectural lighting overlay -->
+  <circle cx="950" cy="150" r="450" fill="rgba(255,255,255,0.08)" />
+  <circle cx="200" cy="550" r="350" fill="rgba(242,183,5,0.06)" />
+
+  <!-- Window Blind Illustration Frame -->
+  <g transform="translate(150, 80)" filter="drop-shadow(0px 10px 25px rgba(0,0,0,0.25))">
+    <!-- Outer Window Frame -->
+    <rect x="0" y="0" width="900" height="420" rx="16" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
+    
+    <!-- Blind Roll Top Holder -->
+    <rect x="20" y="15" width="860" height="24" rx="6" fill="#F2B705" opacity="0.9" />
+    
+    <!-- Blind Fabric Slices / Slats -->
+    <rect x="30" y="45" width="840" height="220" rx="4" fill="rgba(255,255,255,0.92)" />
+    
+    <!-- Fabric Texture Lines -->
+    <path d="M 30 75 L 870 75 M 30 105 L 870 105 M 30 135 L 870 135 M 30 165 L 870 165 M 30 195 L 870 195 M 30 225 L 870 225 M 30 255 L 870 255" stroke="#0F3D5E" stroke-width="1" opacity="0.15" />
+
+    <!-- Bottom Counterweight Rail -->
+    <rect x="25" y="265" width="850" height="14" rx="4" fill="#0F3D5E" opacity="0.8" />
+
+    <!-- Soft Light Rays -->
+    <polygon points="30,279 870,279 900,410 0,410" fill="rgba(255,255,255,0.12)" />
+  </g>
+
+  <!-- Content Banner Card -->
+  <g transform="translate(100, 480)">
+    <rect x="0" y="0" width="1000" height="140" rx="16" fill="#0F3D5E" opacity="0.92" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+    <rect x="30" y="28" width="10" height="84" rx="5" fill="#F2B705" />
+    <text x="55" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="32" fill="#FFFFFF">Estores Screen Valencia</text>
+    <text x="55" y="98" font-family="'Inter', sans-serif" font-weight="400" font-size="20" fill="#CFE0EE">Visibilidad exterior sin deslumbramiento ni calor</text>
+
+    <!-- Badge -->
+    <rect x="750" y="48" width="210" height="44" rx="22" fill="#F2B705" />
+    <text x="855" y="76" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#0F3D5E" text-anchor="middle">ESTORES VALENCIA</text>
+  </g>
+</svg>
