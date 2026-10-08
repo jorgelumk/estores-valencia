@@ -107,7 +107,7 @@ export function QuoteForm({ initialProduct = "enrollables", compact = false }: Q
     setLoading(true);
 
     try {
-      await fetch("/api/quote", {
+      await fetch("/api/quote/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

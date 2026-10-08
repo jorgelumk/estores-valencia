@@ -7,9 +7,10 @@ export async function POST(req: Request) {
     const apiKey = process.env.RESEND_API_KEY;
     const recipientEmail = process.env.NOTIFICATION_EMAIL || "info@estoresvalencia.es";
     const senderEmail = process.env.SENDER_EMAIL || "Jorge AI Solutions <jorge@agenciaiasolutions.com>";
+    const verifiedFallbackSender = "Estores Valencia <presupuestos@pergolasbioclimaticasvalencia.es>";
 
     if (!apiKey) {
-      console.warn("RESEND_API_KEY non set, logging lead locally:", body);
+      console.warn("RESEND_API_KEY not set, logging lead locally:", body);
       return NextResponse.json({
         success: true,
         message: "Formulario recibido correctamente (modo simulación sin RESEND_API_KEY)."
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
       : "<li>No especificadas</li>";
 
     const emailHtml = `
-      <div style="font-family: Arial, sans-serif; padding: 20px; color: #0F3D5E; max-width: 600px; margin: 0 auto; border: 1px solid #DCE8F2; rounded: 12px;">
+      <div style="font-family: Arial, sans-serif; padding: 20px; color: #0F3D5E; max-width: 600px; margin: 0 auto; border: 1px solid #DCE8F2; border-radius: 12px;">
         <h2 style="color: #0F3D5E; border-bottom: 2px solid #F2B705; padding-bottom: 8px;">🔥 Nueva Solicitud de Presupuesto - Estores Valencia</h2>
         
         <p><strong>👤 Nombre:</strong> ${name || "No indicado"}</p>
@@ -44,7 +45,8 @@ export async function POST(req: Request) {
 
     const recipients = recipientEmail.split(",").map((e) => e.trim());
 
-    const resendRes = await fetch("https://api.resend.com/emails", {
+    // Try sending with requested sender
+    let resendRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,12 +55,35 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from: senderEmail,
         to: recipients,
+        replyTo: "jorge@agenciaiasolutions.com",
         subject: `🔥 Solicitud Presupuesto: ${name} (${municipality || "Valencia"})`,
         html: emailHtml
       })
     });
 
-    const resData = await resendRes.json();
+    let resData = await resendRes.json();
+
+    // If Resend rejects due to unverified domain, fallback to verified domain sender so lead is NEVER lost
+    if (!resendRes.ok && (resData?.statusCode === 403 || resData?.message?.includes("domain"))) {
+      console.warn("Unverified sender domain, falling back to verified domain sender:", resData);
+
+      resendRes = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          from: verifiedFallbackSender,
+          to: recipients,
+          replyTo: "jorge@agenciaiasolutions.com",
+          subject: `🔥 Solicitud Presupuesto: ${name} (${municipality || "Valencia"})`,
+          html: emailHtml
+        })
+      });
+
+      resData = await resendRes.json();
+    }
 
     if (!resendRes.ok) {
       console.error("Resend API Error:", resData);
