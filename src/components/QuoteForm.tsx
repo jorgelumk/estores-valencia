@@ -107,7 +107,7 @@ export function QuoteForm({ initialProduct = "enrollables", compact = false }: Q
     setLoading(true);
 
     try {
-      await fetch("/api/quote/", {
+      const res = await fetch("/api/quote/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -115,19 +115,25 @@ export function QuoteForm({ initialProduct = "enrollables", compact = false }: Q
           windowItems
         })
       });
-    } catch (err) {
+
+      const resData = await res.json();
+      if (!res.ok || !resData.success) {
+        throw new Error(resData?.error?.message || "Error al procesar el envío del correo.");
+      }
+
+      if (typeof window !== "undefined" && (window as any).gtag) {
+        (window as any).gtag("event", "generate_lead", {
+          event_category: "Formulario Presupuesto",
+          event_label: formData.product
+        });
+      }
+      setSubmitted(true);
+    } catch (err: any) {
       console.error("Error al enviar formulario:", err);
+      alert(`No se pudo enviar el formulario: ${err.message || "Error de conexión"}`);
     } finally {
       setLoading(false);
     }
-
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "generate_lead", {
-        event_category: "Formulario Presupuesto",
-        event_label: formData.product
-      });
-    }
-    setSubmitted(true);
   };
 
   if (submitted) {
