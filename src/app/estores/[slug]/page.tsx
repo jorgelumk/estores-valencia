@@ -63,8 +63,8 @@ export default async function ProductLandingPage({ params }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <Breadcrumbs
           items={[
-            { label: "Estores", href: "/estores/" },
-            { label: landing.hero.h1, href: `/estores/${landing.slug}/` }
+            { label: "Estores", href: "/estores-valencia/" },
+            { label: landing.hero.h1, href: `/estores/${landing.slug.endsWith("-valencia") ? landing.slug : `${landing.slug}-valencia`}/` }
           ]}
         />
       </div>

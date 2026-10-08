@@ -38,7 +38,7 @@ export function ZoneMap() {
         <div className="w-full lg:w-1/2 relative rounded-2xl overflow-hidden border border-[#DCE8F2] bg-[#E1EEF8]">
           <Image
             src="/images/mapa-zonas-valencia.jpg"
-            alt="Mapa radio 30 km medición gratis estores valencia"
+            alt="Mapa radio 30 km servicio estores valencia"
             width={800}
             height={450}
             className="w-full h-auto object-cover"
@@ -52,10 +52,10 @@ export function ZoneMap() {
             Servicio a Domicilio (Sin Tienda Física)
           </div>
           <h2 className="font-heading font-bold text-2xl text-[#0F3D5E]">
-            Medición e instalación gratis en Valencia y 30 km a la redonda
+            Servicio a domicilio e instalación en Valencia y 30 km a la redonda
           </h2>
           <p className="text-sm text-[#4A6378] leading-relaxed">
-            Prescindimos de tienda física para ofrecerte el mejor precio y el servicio más cómodo: acudimos directamente a tu hogar con todos los muestrarios de telas y accesorios para medir sin ningún compromiso.
+            Prescindimos de tienda física para ofrecerte el mejor precio y el servicio más cómodo: nos envías tus medidas aproximadas, te damos presupuesto sin compromiso y, tras aceptarlo, acudimos a tu hogar con los muestrarios para verificar las medidas finales.
           </p>
           <div className="pt-2">
             <Link href="/zonas/" className="text-sm font-bold text-[#2A7DB8] hover:underline flex items-center gap-1">

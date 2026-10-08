@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
+import PersianasAlicantinasPage, { metadata as persianasMetadata } from "../persianas-alicantinas-valencia/page";
 
-export default function PersianasAlicantinasRedirect() {
-  redirect("/persianas-alicantinas-valencia/");
-}
+export const metadata = persianasMetadata;
+export default PersianasAlicantinasPage;

@@ -11,7 +11,7 @@ import { LocalBusinessSchema } from "@/components/SchemaJSONLD";
 export const metadata: Metadata = {
   metadataBase: new URL("https://estoresvalencia.es"),
   title: {
-    default: "Estores en Valencia a Medida | Medición e Instalación Gratis",
+    default: "Estores en Valencia a Medida | Presupuesto sin Compromiso",
     template: "%s | Estores Valencia"
   },
   description: "Estores a medida en Valencia y alrededores: enrollables, screen, noche y día, opacos y motorizados. Medimos e instalamos a domicilio.",
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     locale: "es_ES",
     url: "https://estoresvalencia.es/",
     siteName: "Estores Valencia",
-    title: "Estores en Valencia a Medida | Medición e Instalación Gratis",
+    title: "Estores en Valencia a Medida | Presupuesto sin Compromiso",
     description: "Estores a medida en Valencia y alrededores: enrollables, screen, noche y día, opacos y motorizados. Medimos e instalamos a domicilio."
   },
   twitter: {
     card: "summary_large_image",
-    title: "Estores en Valencia a Medida | Medición e Instalación Gratis",
+    title: "Estores en Valencia a Medida | Presupuesto sin Compromiso",
     description: "Estores a medida en Valencia y alrededores: enrollables, screen, noche y día, opacos y motorizados."
   },
   icons: {
@@ -35,6 +35,9 @@ export const metadata: Metadata = {
       { url: "/icon.svg", type: "image/svg+xml" }
     ],
     apple: "/apple-icon.png"
+  },
+  verification: {
+    google: "e5zX_Lto6eqm7o9ObukQ5Ui9XAa37in1VRv_MmQNq_M"
   },
   robots: {
     index: true,
@@ -50,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <meta name="google-site-verification" content="e5zX_Lto6eqm7o9ObukQ5Ui9XAa37in1VRv_MmQNq_M" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"

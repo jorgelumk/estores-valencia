@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
+import CortinasPage, { metadata as cortinasMetadata } from "../cortinas-valencia/page";
 
-export default function CortinasRedirect() {
-  redirect("/cortinas-valencia/");
-}
+export const metadata = cortinasMetadata;
+export default CortinasPage;

@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
+import EstoresCategoryPage, { metadata as estoresMetadata } from "../estores-valencia/page";
 
-export default function EstoresRedirect() {
-  redirect("/estores-valencia/");
-}
+export const metadata = estoresMetadata;
+export default EstoresCategoryPage;

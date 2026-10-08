@@ -200,7 +200,7 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Mid Article CTA */}
         <div className="card-brand p-8 bg-[#E1EEF8] border border-[#2A7DB8]/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <div className="badge-brand bg-[#2A7DB8] text-white text-[10px]">Medición gratis en Valencia y alrededores</div>
+            <div className="badge-brand bg-[#2A7DB8] text-white text-[10px]">Presupuesto sin compromiso en Valencia</div>
             <p className="font-heading font-bold text-base text-[#0F3D5E]">
               {post.midArticleCta.text}
             </p>

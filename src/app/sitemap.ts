@@ -9,12 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     "",
-    "/estores/",
-    "/paneles-japoneses/",
-    "/cortinas-verticales/",
-    "/persianas-alicantinas/",
-    "/cortinas/",
-    "/empresas/",
+    "/estores-valencia/",
+    "/paneles-japoneses-valencia/",
+    "/cortinas-verticales-valencia/",
+    "/persianas-alicantinas-valencia/",
+    "/cortinas-valencia/",
+    "/empresas-valencia/",
     "/zonas/",
     "/presupuesto/",
     "/blog/",
@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const landingEntries = Object.keys(productLandings).map((slug) => ({
-    url: `${baseUrl}/estores/${slug}/`,
+    url: `${baseUrl}/estores/${slug.endsWith("-valencia") ? slug : `${slug}-valencia`}/`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.9

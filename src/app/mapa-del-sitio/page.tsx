@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 export default function MapaDelSitioPage() {
   const mainProducts = [
     { name: "Inicio", href: "/", desc: "Página principal de Estores Valencia" },
-    { name: "Estores a Medida", href: "/estores/", desc: "Catálogo general de estores para hogar y oficina" },
+    { name: "Estores a Medida", href: "/estores-valencia/", desc: "Catálogo general de estores para hogar y oficina" },
     { name: "Paneles Japoneses", href: "/paneles-japoneses-valencia/", desc: "Elegancia minimalista para grandes ventanales y terrazas" },
     { name: "Cortinas Verticales", href: "/cortinas-verticales-valencia/", desc: "Control de luz preciso para salones y oficinas" },
     { name: "Persianas Alicantinas", href: "/persianas-alicantinas-valencia/", desc: "Persianas tradicionales de madera y PVC para balcón" },
@@ -54,7 +54,7 @@ export default function MapaDelSitioPage() {
     { name: "Zonas de Servicio (30 km)", href: "/zonas/", desc: "Valencia ciudad, L'Horta, Camp de Túria y alrededores" },
     { name: "Preguntas Frecuentes", href: "/preguntas-frecuentes/", desc: "Respuestas a dudas sobre medición, garantía y plazos" },
     { name: "Contacto", href: "/contacto/", desc: "Atención telefónica, WhatsApp y correo electrónico" },
-    { name: "Pedir Presupuesto Gratis", href: "/presupuesto/", desc: "Solicita tu visita de medición gratuita sin compromiso" }
+    { name: "Pedir Presupuesto Sin Compromiso", href: "/presupuesto/", desc: "Solicita tu presupuesto sin compromiso con tus medidas" }
   ];
 
   const legalPages = [

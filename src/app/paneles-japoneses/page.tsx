@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
+import PanelesJaponesesPage, { metadata as panelesMetadata } from "../paneles-japoneses-valencia/page";
 
-export default function PanelesJaponesesRedirect() {
-  redirect("/paneles-japoneses-valencia/");
-}
+export const metadata = panelesMetadata;
+export default PanelesJaponesesPage;

@@ -868,7 +868,7 @@ export const blogPosts: Record<string, BlogPost> = {
       { id: "rangos-precios", label: "Rangos de precios orientativos por tipo de estor en Valencia" },
       { id: "medida-vs-estandar", label: "Estores a medida vs Estores estándar de gran superficie" },
       { id: "ahorro-energetico", label: "Ahorro energético: Cómo amortizar la inversión en climatización" },
-      { id: "servicio-domicilio", label: "El valor añadido del servicio de medición e instalación gratis" },
+      { id: "servicio-domicilio", label: "El valor añadido del servicio de muestras y verificación a domicilio" },
       { id: "consejos-presupuesto", label: "Consejos para optimizar tu presupuesto sin perder calidad" },
       { id: "tabla-precios", label: "Tabla orientativa de precios por gama y producto" },
       { id: "preguntas-frecuentes", label: "Preguntas frecuentes sobre presupuestos" }

@@ -308,7 +308,7 @@ export const productLandings: Record<string, ProductLanding> = {
     slug: "paqueto",
     meta: {
       title: "Estores Paqueto en Valencia a Medida | Elegancia y Textil Natural",
-      description: "Estores paqueto en Valencia a medida: pliegues suaves sin varillas en telas de lino y algodón. Aportan calidez y distinción. Medición a domicilio gratis.",
+      description: "Estores paqueto en Valencia a medida: pliegues suaves sin varillas en telas de lino y algodón. Aportan calidez y distinción. Presupuesto sin compromiso.",
       canonical: "https://estoresvalencia.es/estores/paqueto-valencia/",
       mainKeyword: "estores paqueto valencia",
       secondaryKeywords: ["estores paqueto", "estores plegables sin varillas valencia", "estor paqueto lino"]
@@ -397,7 +397,7 @@ export const productLandings: Record<string, ProductLanding> = {
     slug: "opacos",
     meta: {
       title: "Estores Opacos en Valencia a Medida | Oscuridad Blackout 100%",
-      description: "Estores opacos en Valencia a medida: bloqueo total de la luz y aislamiento térmico para dormitorios sin persiana. Medición gratis a domicilio.",
+      description: "Estores opacos en Valencia a medida: bloqueo total de la luz y aislamiento térmico para dormitorios sin persiana. Presupuesto sin compromiso.",
       canonical: "https://estoresvalencia.es/estores/opacos-valencia/",
       mainKeyword: "estores opacos valencia",
       secondaryKeywords: ["estores opacos", "estores blackout valencia", "cortinas blackout valencia"]
@@ -486,7 +486,7 @@ export const productLandings: Record<string, ProductLanding> = {
     slug: "motorizados",
     meta: {
       title: "Estores Motorizados en Valencia a Medida | Domótica y Confort",
-      description: "Estores motorizados en Valencia a medida: control silencioso por mando, móvil o asistentes de voz (Alexa, Google). Medición e instalación gratis.",
+      description: "Estores motorizados en Valencia a medida: control silencioso por mando, móvil o asistentes de voz (Alexa, Google). Presupuesto sin compromiso e instalación incluida.",
       canonical: "https://estoresvalencia.es/estores/motorizados-valencia/",
       mainKeyword: "estores motorizados valencia",
       secondaryKeywords: ["estores eléctricos valencia", "estores domótica valencia", "motores estores somfy valencia"]

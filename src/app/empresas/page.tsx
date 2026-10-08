@@ -1,5 +1,4 @@
-import { redirect } from "next/navigation";
+import EmpresasPage, { metadata as empresasMetadata } from "../empresas-valencia/page";
 
-export default function EmpresasRedirect() {
-  redirect("/empresas-valencia/");
-}
+export const metadata = empresasMetadata;
+export default EmpresasPage;
