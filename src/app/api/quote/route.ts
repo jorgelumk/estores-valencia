@@ -6,7 +6,7 @@ export async function POST(req: Request) {
 
     const apiKey = process.env.RESEND_API_KEY;
     const recipientEmail = process.env.NOTIFICATION_EMAIL || "info@estoresvalencia.es";
-    const senderEmail = process.env.SENDER_EMAIL || "Estores Valencia <info@estoresvalencia.es>";
+    const senderEmail = process.env.SENDER_EMAIL || "Jorge AI Solutions <jorge@agenciaiasolutions.com>";
 
     if (!apiKey) {
       console.warn("RESEND_API_KEY non set, logging lead locally:", body);
