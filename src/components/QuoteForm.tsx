@@ -95,13 +95,32 @@ export function QuoteForm({ initialProduct = "enrollables", compact = false }: Q
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.acceptTerms) {
       alert("Debes aceptar los términos y condiciones de uso para enviar la solicitud.");
       return;
     }
-    // Simulate GA4 event trigger: gtag('event', 'generate_lead', { ... })
+
+    setLoading(true);
+
+    try {
+      await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          windowItems
+        })
+      });
+    } catch (err) {
+      console.error("Error al enviar formulario:", err);
+    } finally {
+      setLoading(false);
+    }
+
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "generate_lead", {
         event_category: "Formulario Presupuesto",
