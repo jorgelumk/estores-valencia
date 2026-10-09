@@ -11,9 +11,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: false, error: "Configuración de API key no disponible" }, { status: 500 });
     }
     
-    // Guaranteed recipients
-    const recipientConfig = process.env.NOTIFICATION_EMAIL || "info@estoresvalencia.es, jorge@agenciaiasolutions.com";
-    const recipients = recipientConfig.split(",").map((e) => e.trim()).filter(Boolean);
+    // Recipients: env list + always jorge@agenciaiasolutions.com (deduplicated)
+    const recipientConfig = process.env.NOTIFICATION_EMAIL || "info@estoresvalencia.es";
+    const recipients = Array.from(new Set([
+      ...recipientConfig.split(",").map((e) => e.trim().toLowerCase()).filter(Boolean),
+      "jorge@agenciaiasolutions.com"
+    ]));
 
     // Guaranteed sender
     const senderEmail = process.env.SENDER_EMAIL || "Jorge AI Solutions <jorge@agenciaiasolutions.com>";
